@@ -22,8 +22,7 @@
                         </div>
                         <div class="content-item more-content" itemprop="text">
                             <p>
-                                Anda dapat mendengarkan lagu dan download lagu mp3 <?= $title_meta;?> secara gratis di https://downloadlagu123.biz. Jangan Lupa untuk membeli kaset dan CD Original dan serta menjadikan lagu
-                                ini sebagai I-ring / NSP / Ringtones anda.
+                               <?= $spin_text;?>
                             </p>
                             <p>Data lagu:</p>
                             <ul class="data-lagu">

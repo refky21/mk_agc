@@ -32,6 +32,7 @@ class Search extends CI_Controller {
         $datas['title_parameter'] = ucwords($replace);
         $data['title'] = 'Pencarian MP3 | '.ucwords($replace);
 
+		$this->output->cache(5);
         $this->load->view('themes/v1/base/header',$data);
         $this->load->view('themes/v1/search', $datas);
         $this->load->view('themes/v1/base/footer',$data);

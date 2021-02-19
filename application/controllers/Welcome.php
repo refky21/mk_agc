@@ -48,6 +48,7 @@ class Welcome extends CI_Controller {
 		$data['indonesia'] = $indo;
 		$data['title'] = 'Situs Download MP3 | Gratis Download MP3';
 		
+		$this->output->cache(5);
 		$this->load->view('themes/v1/base/header',$data);
 		$this->load->view('themes/v1/home',$data);
 		$this->load->view('themes/v1/base/footer',$data);

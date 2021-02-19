@@ -21,3 +21,8 @@ function get_kw()
 		$kw1 = array_slice($kw1,0,20);
 		return $kw1;
 	}
+	
+function spin($string){
+	$spintax = new Spintax();
+	return $spintax->process($string);
+}

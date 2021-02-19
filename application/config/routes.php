@@ -6,6 +6,7 @@ $route['music/(:any)'] = 'Search/index/$1';
 $route['detail/(:any)'] = 'Detail/index/$1';
 $route['download'] = 'Download/index/$1';
 $route['search'] = 'Search/cari';
+$route['sitemap.xml'] = 'Sitemap/index';
 
 
 
