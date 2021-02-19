@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://downloadmp3.io/sitemap.xml
