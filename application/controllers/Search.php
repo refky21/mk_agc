@@ -11,25 +11,9 @@ class Search extends CI_Controller {
         $putfile = autoSearchSitemap(strtolower($replace));
        
         
-        $url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=relevance&type=video&q=".urlencode($replace)."&key=AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo";
+        $youtubepencarian = getYoutubeSearch($replace);
         
-        $json =  file_get_contents($url);
-        $data = json_decode($json,true);
-        $i = 0 ;
-        if(isset($data['items'])){
-            foreach ($data['items'] as $item) {
-                $results[$i] = [
-                    'id' => $item['id']['videoId'],
-                    'judul' => $item['snippet']['title'],
-                    'description' => $item['snippet']['description'],
-                    'thumbnails' => $item['snippet']['thumbnails']['high']['url'],
-                    'uploader' => $item['snippet']['channelTitle'],
-                ];
-                $i++;
-            }
-        }
-        
-        $datas['music'] = $results;
+        $datas['music'] = $youtubepencarian;
         $datas['title_parameter'] = ucwords($replace);
         $data['title'] = 'Pencarian MP3 | '.ucwords($replace);
         $data['keywords'] = $replace;

@@ -75,6 +75,29 @@ function getYoutubeTopSong($limit='20')
 		return $results;
 }
 
+
+function getYoutubeSearch($query){
+	$url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=relevance&type=video&q=".urlencode($query)."&key=".get_apikey_youtube();
+        
+	$json =  file_get_contents($url);
+	$data = json_decode($json,true);
+	$i = 0 ;
+	if(isset($data['items'])){
+		foreach ($data['items'] as $item) {
+			$results[$i] = [
+				'id' => $item['id']['videoId'],
+				'judul' => $item['snippet']['title'],
+				'description' => $item['snippet']['description'],
+				'thumbnails' => $item['snippet']['thumbnails']['high']['url'],
+				'uploader' => $item['snippet']['channelTitle'],
+			];
+			$i++;
+		}
+	}
+
+	return $results;
+}
+
 function getItunesPlaylist($country='',$limit='20')
 {
 	$url = "https://rss.itunes.apple.com/api/v1/".$country."/itunes-music/top-songs/all/".$limit."/explicit.json";
