@@ -50,16 +50,91 @@ function get_title($str){
     return  str_replace('-',' ', $str);
 }
 
+function getYoutubeTopSong($limit='20')
+{
+		$getApiYoutube = get_apikey_youtube();
+
+		$trending = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&chart=mostPopular&maxResults='.$limit.'&videoCategoryId=10&type=video&key='.$getApiYoutube;
+
+		$json =  file_get_contents($trending);
+        $arr = json_decode($json,true);
+        $i = 0 ;
+        if(isset($arr['items'])){
+            foreach ($arr['items'] as $item) {
+                $results[$i] = [
+                    'id' => $item['id'],
+                    'judul' => $item['snippet']['title'],
+                    'description' => $item['snippet']['description'],
+                    'thumbnails' => $item['snippet']['thumbnails']['high']['url'],
+                    'uploader' => $item['snippet']['channelTitle'],
+                ];
+                $i++;
+            }
+		}
+
+		return $results;
+}
+
+function getItunesPlaylist($country='',$limit='20')
+{
+	$url = "https://rss.itunes.apple.com/api/v1/".$country."/itunes-music/top-songs/all/".$limit."/explicit.json";
+	$json =  file_get_contents($url);
+    $arr = json_decode($json,true);
+    $i = 0 ;
+    if(isset($arr['feed']['results'])){
+        foreach ($arr['feed']['results'] as $item) {
+            $results[$i] = [
+                'artistName' => $item['artistName'],
+                'releaseDate' => $item['releaseDate'],
+                'name' => $item['name'],
+                'thumbNail' => $item['artworkUrl100'],
+                'songName' =>  $item['artistName'].' - '.$item['name'],
+            ];
+            $i++;
+        }
+	}
+	
+	return $results;
+}
+
+
+function autoSearchSitemap($str){
+	$search = $str;
+	$maxhistory = 25;
+	$lastsearchfile = FCPATH.'keywoard/sitemap.txt';
+	$lastsearch = file($lastsearchfile,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	if($search) $history[] = $search;
+		if(is_array($lastsearch)) {
+			$i=count($history);
+			foreach($lastsearch as $k => $v) {
+				if($v != $search && $i < $maxhistory) {
+					$history[] = $v;
+					$i++;
+				}
+			}
+	}
+	if($history) {
+		file_put_contents($lastsearchfile, join("\n", $history));
+	}
+	return $history;
+}
+
 
 function get_kw()
-	{
-		$kw1 = file(FCPATH.'keywoard/kw1.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-		// $kw2 = file(FCPATH.'keywoard/kw2.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-		shuffle($kw1);
+{
+	$kw1 = file(FCPATH.'keywoard/kw1.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	shuffle($kw1);
+	$kw1 = array_slice($kw1,0,20);
+	return $kw1;
+}
 
-		$kw1 = array_slice($kw1,0,20);
-		return $kw1;
-	}
+function getSitemap($limit)
+{
+	$sitemap = file(FCPATH.'keywoard/sitemap.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	shuffle($sitemap);
+	$sitemap = array_slice($sitemap,0,$limit);
+	return $sitemap;
+}
 	
 function spin($string){
 	$spintax = new Spintax();

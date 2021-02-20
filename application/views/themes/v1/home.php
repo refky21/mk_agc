@@ -50,10 +50,10 @@
                         <div class="clearfix list-content">
                             <div class="clearfix">
                                 <div class="content-left pull-left">
-                                <a href="<?= single_permalink($data['id'],$data['judul']);?>" title="Download Lagu <?=$data['judul']; ?>" itemprop="url">
+                                <a href="<?= search_permalink($data['songName']);?>" title="Download Lagu <?=$data['songName']; ?>" itemprop="url">
                                     <img
-                                        src="<?=$data['thumbnails']; ?>"
-                                        alt="<?=$data['judul']; ?>"
+                                        src="<?=$data['thumbNail']; ?>"
+                                        alt="<?=$data['songName']; ?>"
                                         width="55"
                                         height="55"
                                         itemprop="image"
@@ -62,11 +62,11 @@
                                 </div>
                                 <div class="content-right">
                                 <h2 class="content-title" itemprop="headline">
-                                    <a href="<?= single_permalink($data['id'],$data['judul']);?>" title="Download Lagu <?=$data['judul']; ?>" itemprop="url"> <?=$data['judul']; ?> </a>
+                                    <a href="<?= search_permalink($data['songName']);?>" title="Download Lagu <?=$data['songName']; ?>" itemprop="url"> <?=$data['songName']; ?> </a>
                                 </h2>
                                 <div class="meta-content">
                                     <span class="separator">
-                                        <a href="<?= base_url('search')?>?q=<?=$data['uploader']; ?>" title="Download Lagu <?=$data['uploader']; ?>" itemprop="url"> <?=$data['uploader']; ?> </a>
+                                        <a href="<?= base_url('search')?>?q=<?=$data['artistName']; ?>" title="Download Lagu <?=$data['artistName']; ?>" itemprop="url"> <?=$data['artistName']; ?> </a>
                                     </span>
                                 </div>
                             </div>

@@ -1,7 +1,5 @@
 <?php
-// API YT = AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo
 
-// URL
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Search extends CI_Controller {
@@ -9,6 +7,9 @@ class Search extends CI_Controller {
 	public function index($pencarian)
 	{
         $replace = str_replace('-',' ', $pencarian);
+
+        $putfile = autoSearchSitemap(strtolower($replace));
+       
         
         $url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=relevance&type=video&q=".urlencode($replace)."&key=AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo";
         
