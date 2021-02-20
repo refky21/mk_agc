@@ -17,9 +17,10 @@
                         </div>
                         <div class="ads-margin-bottom"></div>
                         <div class="downloadbutton">
-                            <a href="#" target="_blank" rel="nofollow">FAST DOWNLOAD</a>
+                            <a href="<?= sitebase('Ads1'); ?>" target="_blank" rel="nofollow">FAST DOWNLOAD</a>
                             <a href="<?= base_url('/download?id='.$id_video.'&title='.$title_meta)?>" rel="nofollow">Download Mp3 / Mp4</a>
                         </div>
+                        <?= siteBase('Ads3');?>
                         <div class="content-item more-content" itemprop="text">
                             <p>
                                <?= $spin_text;?>
@@ -85,9 +86,11 @@ https://www.downloadlagu123.biz/Maroon-5-Memories-Official-Video/SlPhMPnQ58k.htm
                         </div>
                         <div class="warning" itemprop="text">
                             <strong>Disclamer:</strong><br />
-                            File disini di hosting di Youtube.com bukan di server https://downloadlagu123.biz dan kami tidak mengupload pada server kami. Jika menurut anda ini adalah file ilegal, silakan laporkan ke
-                            <a href="https://www.youtube.com/reportabuse" rel="nofollow">Youtube</a> dengan id Video <strong>SlPhMPnQ58k</strong>
+                            File disini di hosting di Youtube.com bukan di server <?= base_url(); ?> dan kami tidak mengupload pada server kami. Jika menurut anda ini adalah file ilegal, silakan laporkan ke
+                            <a href="https://www.youtube.com/reportabuse" rel="nofollow">Youtube</a> dengan id Video <strong><?= $id_video;?></strong>
+                           
                         </div>
+                        <?= siteBase('Ads3');?>
                     </div>
                     <?php $this->load->view('themes/v1/base/sidebar');?>
                 </div>

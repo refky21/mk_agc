@@ -1,1 +1,13 @@
-{}
+{
+	"siteName" : "Mk-Agc MP3",
+	"siteDesc" : "Situs Streaming dan Download MP3 Gratis",
+	"siteAuthor" : "Mang Kanya",
+	"siteKeywords" : "ScriptAgc,AgcMp3,download lagu gratis, download lagu indonesia, download lagu alan walker, download lagu deny caknan",
+	"textDesc" : "Download lagu planetlagu gudang lagu %site_name% terpopuler saat ini, yang siap anda download lagu mp3 nya dan dengarkan langsung untuk anda review.",
+	"siteLogo" : "https://www.downloadlagu123.biz/themes/lagu123/assets/images/logo.png",
+	"ApiYoutube" : "AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo,AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo",
+	"Ads1" : "BlaBlaBla",
+	"Ads2" : "<script type=\"text\/javascript\" src=\"\/\/ylx-1.com\/bnr.php?section=General&pub=733388&format=728x90&ga=g&bg=1\"><\/script>\n<noscript><a href=\"https:\/\/yllix.com\/publishers\/733388\" target=\"_blank\"><img src=\"\/\/ylx-aff.advertica-cdn.com\/pub\/728x90.png\" style=\"border:none;margin:0;padding:0;vertical-align:baseline;\" \/><\/a><\/noscript>",
+	"Ads3" : "<script type=\"text\/javascript\" src=\"\/\/ylx-1.com\/bnr.php?section=General&pub=733388&format=468x60&ga=g&bg=1\"><\/script>\n<noscript><a href=\"https:\/\/yllix.com\/publishers\/733388\" target=\"_blank\"><img src=\"\/\/ylx-aff.advertica-cdn.com\/pub\/468x60.png\" style=\"border:none;margin:0;padding:0;vertical-align:baseline;\" \/><\/a><\/noscript>",
+	"AdsPopup" : ""
+}

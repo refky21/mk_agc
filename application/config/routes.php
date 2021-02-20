@@ -9,6 +9,12 @@ $route['search'] = 'Search/cari';
 $route['sitemap.xml'] = 'Sitemap/index';
 
 
+// Page
+$route['page/disclaimer'] = 'Page/disclaimer';
+$route['page/copyright'] = 'Page/copyright';
+$route['page/term-of-services'] = 'Page/tos';
+
+
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

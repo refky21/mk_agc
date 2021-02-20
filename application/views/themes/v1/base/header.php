@@ -5,23 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="https://gmpg.org/xfn/11" />
-        <title><?= $title; ?></title>
-        <meta name="description" content="Download Lagu Memories Maroon 5 MP3 Gratis dan download mp3 Memories Maroon 5 full album, lagu pop dan musik indonesia terbaru" />
-        <meta property="og:description" content="Download Lagu Memories Maroon 5 MP3 Gratis dan download mp3 Memories Maroon 5 full album, lagu pop dan musik indonesia terbaru" />
-        <meta property="og:site_name" content="Download Lagu Gratis" />
-        <meta property="og:title" content="Download Lagu Memories Maroon 5 MP3 Gratis" />
-        <meta property="og:url" content="https://www.downloadlagu123.biz/lagu/memories-maroon-5.html" />
-        <link rel="manifest" href="/manifest.json" />
+        <title><?= sitebase('siteName'); ?> <?= $title; ?></title>
+		<!-- Meta -->
+        <meta name="description" content="<?= sitebase('siteDesc'); ?>" />
+        <meta property="og:description" content="<?= sitebase('siteDesc'); ?>" />
+        <meta property="og:site_name" content="<?= sitebase('siteName'); ?>" />
+		<meta name="keywords" content="<?= sitebase('siteKeywords'); ?>, <?= $keywords;?>">
+		<meta name="author" content="<?= sitebase('siteAuthor'); ?>">
+        <meta property="og:title" content="Download Lagu <?= $title; ?>" />
+        
         <meta name="theme-color" content="#E91E63" />
         <meta name="googlebot" content="index, follow" />
         <meta name="robots" content="index, follow" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//use.fontawesome.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        <link rel="dns-prefetch" href="//s0.wp.com" />
-        <link rel="dns-prefetch" href="//s1.wp.com" />
-        <link rel="dns-prefetch" href="//s2.wp.com" />
-        <link rel="dns-prefetch" href="//s3.wp.com" />
+        <!-- Stylesheet -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3A300%2C400%2C600%2C700" type="text/css" media="all" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.9/build/mediaelementplayer.min.css" integrity="sha256-ji1bfJaTGnyscoc7LzcV9yNJy5vGKJ0frO3KJo1oaGQ=" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
@@ -35,8 +31,8 @@
                     <div class="list-table clearfix">
                         <div class="table-row">
                             <div class="table-cell logo">
-                                <a href="https://www.downloadlagu123.biz/" title="Download Lagu Gratis" itemprop="url">
-                                    <img src="https://www.downloadlagu123.biz/themes/lagu123/assets/images/logo.png" alt="Download Lagu Gratis" title="Download Lagu Gratis" itemprop="image" />
+                                <a href="<?= base_url();?>" title="Download Lagu Gratis" itemprop="url">
+                                    <img src="<?= sitebase('siteLogo'); ?>" alt="Download Lagu Gratis" title="Download Lagu Gratis" itemprop="image" />
                                 </a>
                                 <a id="mobile-menu" class="pull-right" href="#menu" rel="nofollow"><i class="fas fa-bars"></i><span class="screen-reader-text">Mobile Menu</span></a>
                             </div>

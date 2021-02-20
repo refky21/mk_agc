@@ -1,17 +1,17 @@
 <div id="footer-container">
             <div class="container">
                 <p class="copy">
-                    &copy; 2019 Download Lagu Gratis. All rights reserved.
+                    &copy; <?= date('Y');?> <?= sitebase('siteName'); ?>. All rights reserved.
                 </p>
                 <ul class="footer-menu">
                     <li>
-                        <a href="https://www.downloadlagu123.biz/p/disclaimer.html" title="Disclaimer">Disclaimer</a>
+                        <a href="<?= base_url();?>page/disclaimer" title="Disclaimer">Disclaimer</a>
                     </li>
                     <li>
-                        <a href="https://www.downloadlagu123.biz/p/copyright.html" title="Copyright">Copyright</a>
+                        <a href="<?= base_url();?>page/copyright" title="Copyright">Copyright</a>
                     </li>
                     <li>
-                        <a href="https://www.downloadlagu123.biz/p/term-of-services.html" title="Term Of Services">TOS</a>
+                        <a href="<?= base_url();?>page/term-of-services" title="Term Of Services">TOS</a>
                     </li>
                 </ul>
             </div>
@@ -162,6 +162,6 @@
         });
     })(jQuery);
 </script>
-
+<?= siteBase('AdsPopup');?>
     </body>
 </html>

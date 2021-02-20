@@ -5,9 +5,9 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+        $getApiYoutube = get_apikey_youtube();
 
-		
-		$trending = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&chart=mostPopular&maxResults=10&videoCategoryId=10&type=video&key=AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo';
+		$trending = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&chart=mostPopular&maxResults=10&videoCategoryId=10&type=video&key='.$getApiYoutube;
 
 		$json =  file_get_contents($trending);
         $arr = json_decode($json,true);
@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 		}
 
 		// New Indonesia
-		$indonesia = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&regionCode=id&chart=mostPopular&maxResults=10&videoCategoryId=10&type=video&key=AIzaSyCZeyepaUrGejdBzhAfr23NCQtgLkuhTFo';
+		$indonesia = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&regionCode=id&chart=mostPopular&maxResults=10&videoCategoryId=10&type=video&key='.$getApiYoutube;
 
 		$json =  file_get_contents($indonesia);
         $arr = json_decode($json,true);
@@ -47,8 +47,9 @@ class Welcome extends CI_Controller {
 		$data['trending'] = $results;
 		$data['indonesia'] = $indo;
 		$data['title'] = 'Situs Download MP3 | Gratis Download MP3';
+		$data['keywords'] = 'Download MP3 Gratis,download lagu gratis, download lagu terbaru, download lagu populer, download lagu dangdut, download lagu pop indonesia';
 		
-		$this->output->cache(5);
+		//$this->output->cache(5);
 		$this->load->view('themes/v1/base/header',$data);
 		$this->load->view('themes/v1/home',$data);
 		$this->load->view('themes/v1/base/footer',$data);

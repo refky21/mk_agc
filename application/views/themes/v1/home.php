@@ -2,12 +2,13 @@
         <div id="site-container">
             <div class="container">
                 <div class="info">Silahkan anda mendownload lagu secara gratis disini hanya untuk review. Jika anda menyukainya, silahkan beli lagu yang asli</div>
+                <?= siteBase('Ads2');?>
                 <div class="row" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
                     <h1 class="screen-reader-text" itemprop="headline">Download Lagu Gratis</h1>
                     <div class="col-md-main">
                         <h3 class="main-title"><span class="highlight">Lagu</span> Terpopuler</h3>
                         <div class="success" itemprop="text">
-                            Download lagu lagu planetlagu gudang lagu lagu123 terpopuler saat ini, yang siap anda download lagu mp3 nya dan dengarkan langsung untuk anda review.
+                            <?= siteBase('textDesc');?>
                         </div>
                         <?php
                             foreach ($trending as $data):
@@ -40,7 +41,7 @@
                        
                         <h3 class="main-title"><span class="highlight">Rilis</span> Terbaru</h3>
                         <div class="success" itemprop="text">
-                            Download lagu lagu planetlagu gudang lagu lagu123 yang baru saja rilis, yang siap anda download lagu mp3 nya dan dengarkan langsung untuk anda review.
+                        <?= siteBase('textDesc');?>
                         </div>
                         <?php
                             foreach ($indonesia as $data):
@@ -72,9 +73,14 @@
                             </div>
                         </div>
                         <?php endforeach;?>
+                        
+
+                        <!-- Inject AGK -->
                     </div>
+                    
                     <?php $this->load->view('themes/v1/base/sidebar');?>
                 </div>
             </div>
+            <?= siteBase('Ads3');?>
         </div>
-       
+        

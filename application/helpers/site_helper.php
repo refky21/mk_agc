@@ -1,4 +1,43 @@
 <?php
+function getConfig(){
+	$config = json_decode(file_get_contents(FCPATH.'config/site.json'));
+
+	return $config;
+}
+
+
+function siteBase($key){
+	
+	$json = getConfig();
+	// Cek Permintaan Parameter
+	
+	if($key == 'siteName'){
+		return $json->siteName;
+	}elseif($key == 'siteDesc'){
+		return $json->siteDesc;
+	}elseif($key == 'siteAuthor'){
+		return $json->siteAuthor;
+	}elseif($key == 'siteKeywords'){
+		return $json->siteKeywords;
+	}elseif($key == 'siteLogo'){
+		return $json->siteLogo;
+	}elseif($key == 'Ads1'){
+		return $json->Ads1;
+	}elseif($key == 'Ads2'){
+		return $json->Ads2;
+	}elseif($key == 'Ads3'){
+		return $json->Ads3;
+	}elseif($key == 'AdsPopup'){
+		return $json->AdsPopup;
+	}elseif($key == 'textDesc'){
+		$query = $json->textDesc;
+		$text = str_replace( '%site_name%',$json->siteName,  $query );
+		return $text;
+	}
+	
+	return $json;
+}
+
 function search_permalink($str){
     return base_url('music/'.url_title($str));
 }
@@ -25,4 +64,14 @@ function get_kw()
 function spin($string){
 	$spintax = new Spintax();
 	return $spintax->process($string);
+}
+
+function get_apikey_youtube(){
+	$api_keys = getConfig()->ApiYoutube;
+
+	if ( $api_keys ) {
+		$exp_api_keys = explode( ',', $api_keys );
+		shuffle( $exp_api_keys );
+		return $exp_api_keys[0];
+	  }
 }
