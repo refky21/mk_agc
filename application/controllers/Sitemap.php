@@ -11,6 +11,8 @@ class Sitemap extends CI_Controller {
 		$this->output->set_content_type('text/xml');
 		
 		$data['keywoard'] = get_kw();
+
+		$data['sitemap'] = getSitemap(20);
          $this->load->view('themes/v1/sitemap',$data);
     }
     

@@ -4,4 +4,9 @@
 <loc><?=search_permalink($kw) ?></loc>
 </url>
 <?php endforeach; ?>
+<?php foreach($sitemap as $kw): ?>
+<url>
+<loc><?=search_permalink(strtolower($kw)) ?></loc>
+</url>
+<?php endforeach; ?>
 </urlset>
